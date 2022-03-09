@@ -19,18 +19,18 @@ class ComicsTableSeeder extends Seeder
 
         //facciamo il foreach per popolare il nostro database
         //newComics->nome-del-dato nel file in config = $comic["nome-del-dato nel file in config"]
-        foreach($comics as $comic){
+        foreach($comics as $elemento){
             //dichiriamo una variabile che sarà =  nome del nostro model che si trova in App
             $newComics = new Comic();
             
-            $newComics->title = $comic["title"];
-            $newComics->description = $comic["description"];
-            $newComics->thumb = $comic["thumb"];
-            $newComics->price = $comic["price"];
-            $newComics->series = $comic["series"];
-            $newComics->sale_date = $comic["sale_date"];
-            $newComics->type = $comic["type"];
-            
+            $newComics->title = $elemento["title"];
+            $newComics->description = $elemento["description"];
+            $newComics->thumb = $elemento["thumb"];
+            $newComics->price = $elemento["price"];
+            $newComics->series = $elemento["series"];
+            $newComics->sale_date = $elemento["sale_date"];
+            $newComics->type = $elemento["type"];
+
             $newComics->save();
         }
     }

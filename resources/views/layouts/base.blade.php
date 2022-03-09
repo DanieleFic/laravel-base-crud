@@ -9,8 +9,9 @@
 </head>
 <body>
     <div class="container">
+        <h1>LISTA FUMETTI</h1>
         @yield('content')
-        <h1>ciao</h1>
+        
     </div>
 </body>
 </html>
