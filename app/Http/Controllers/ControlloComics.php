@@ -15,7 +15,9 @@ class ControlloComics extends Controller
      */
     public function index()
     {   
-        $comics = Comic::all();
+        /* var_dump(new Comic); */
+        $comics = Comic::all(); 
+        
 
         return view('comics.index', compact('comics'));
     }
