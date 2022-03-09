@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        {{-- @yield('content') --}}
+        @yield('content')
         <h1>ciao</h1>
     </div>
 </body>
