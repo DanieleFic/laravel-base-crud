@@ -3,6 +3,8 @@
 @section('title','Comics')
 
 @section('content')
+<h1>LISTA FUMETTI</h1>
+<a href="{{route("comics.create")}}"><button type="button" class="btn btn-info">Aggiungi Fumetto</button></a>
 <table class="table">
     <thead>
       <tr>
@@ -14,6 +16,7 @@
         <th scope="col">Serie</th>
         <th scope="col">data d'uscita</th>
         <th scope="col">tipo</th>
+        <th scope="col">Modifiche</th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +30,11 @@
             <td>{{$element->series}}</th>
             <td>{{$element->sale_date}}</th>
             <td>{{$element->type}}</th>
+            {{-- facciamo un bottone con il route comics.show che si trova nel nostro controllore  --}}
+            {{-- <td><button href="{{route("comics.show", $element->id)}}" type="button" class="btn btn-info"></button></th> --}}
+            <td><a href="{{route("comics.show", $element->id)}}"><button type="button" class="btn btn-info">Informazioni</button></a></th>
+              <td><a href="{{route("comics.edit", $element->id)}}"><button type="button" class="btn btn-success">Modifica</button></a></th>
+                <td><a href="{{route("comics.show", $element->id)}}"><button type="button" class="btn btn-Danger">Cancella</button></a></th>
         </tr>
         @endforeach
       

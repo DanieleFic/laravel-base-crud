@@ -25,7 +25,7 @@ class CreateComicsTable extends Migration
             $table->string("thumb")->nullable();
             $table->unsignedSmallInteger("price");
             $table->string("series",100);
-            $table->date('sale_date');
+            $table->string('sale_date');
             $table->string("type",50);
             $table->timestamps();
         });
