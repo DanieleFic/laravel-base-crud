@@ -33,8 +33,12 @@
             {{-- facciamo un bottone con il route comics.show che si trova nel nostro controllore  --}}
             {{-- <td><button href="{{route("comics.show", $element->id)}}" type="button" class="btn btn-info"></button></th> --}}
             <td><a href="{{route("comics.show", $element->id)}}"><button type="button" class="btn btn-info">Informazioni</button></a></th>
-              <td><a href="{{route("comics.edit", $element->id)}}"><button type="button" class="btn btn-success">Modifica</button></a></th>
-                <td><a href="{{route("comics.show", $element->id)}}"><button type="button" class="btn btn-Danger">Cancella</button></a></th>
+            <td><a href="{{route("comics.edit", $element->id)}}"><button type="button" class="btn btn-success">Modifica</button></a></th>
+              <form action="{{route("comics.destroy", $element->id)}}" method="POST">
+                @csrf
+                @method("DELETE")
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Sicuro di cancellarlo?')">Elimina</button>
+            </form>
         </tr>
         @endforeach
       

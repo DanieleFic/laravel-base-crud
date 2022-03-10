@@ -9,6 +9,7 @@
   come methodo POST e @csrf nel form che è una funzione
   di laravel--}}
 <h1>MODIFICA FUMETTO</h1>
+<a href="{{route("comics.index")}}"><button type="button" class="btn btn-info">Indietro</button></a>
 <form action="{{route ("comics.store") }}" method="POST">
   @csrf
   <div class="form-row">
@@ -40,7 +41,7 @@
     </div>
     <div class="form-group col-md-6">
       <label for="inputZip">Data d'uscita</label>
-      <input name="sale_date" type="text" class="form-control" id="inputZip">
+      <input name="sale_date" type="date" class="form-control" id="inputZip">
     </div> 
     <div class="form-group col-md-6">
       <label for="inputZip">Serie</label>

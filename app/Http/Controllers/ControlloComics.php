@@ -48,13 +48,11 @@ class ControlloComics extends Controller
 
         $newComic->title = $data["title"];
         $newComic->description = $data["description"];
+        $newComic->thumb = $data["thumb"];
         $newComic->price = $data["price"];
         $newComic->series = $data["series"];
         $newComic->sale_date = $data["sale_date"];
         $newComic->type = $data["type"];
-        /* if(!empty($data["thumb"])){
-            $newProduct->thumb = $data["thumb"];
-        } */
         $newComic->save();
         
         return redirect()->route('comics.show', $newComic->id);
@@ -92,9 +90,23 @@ class ControlloComics extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
         //
+        $data = $request->all();
+        /* $comic->update($data); */
+        //metodo delle slide ma che non mi funziona
+        
+        $comic->title = $data["title"];
+        $comic->description = $data["description"];
+        $comic->thumb = $data["thumb"];
+        $comic->price = $data["price"];
+        $comic->series = $data["series"];
+        $comic->sale_date = $data["sale_date"];
+        $comic->type = $data["type"];
+        $comic->save();
+
+        return redirect()->route('comics.show', $comic->id);  
     }
 
     /**
@@ -103,8 +115,10 @@ class ControlloComics extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        //prendiamo il nostro record e ci mettiamo la funzione delete
+        $comic->delete();
+        return redirect()->route("comics.index");
     }
 }
