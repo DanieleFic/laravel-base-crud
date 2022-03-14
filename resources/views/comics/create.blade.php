@@ -24,7 +24,7 @@
 
     <div class="form-group col-md-12">
       <label for="exampleFormControlTextarea1">Descrizione fumetto</label>
-      <textarea name="description" value="{{old("description")}}" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descrivi il fumetto"></textarea>
+      <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descrivi il fumetto">{{old("description")}}</textarea>
       @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
