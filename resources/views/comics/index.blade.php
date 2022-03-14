@@ -68,7 +68,7 @@
         </div>
         <div class="col col-5" data-label="Customer Name">{{$element->description}}</div>
         <div class="col col-2" data-label="Amount"><img class="ms_img" src="{{$element->thumb}}" alt=""></div>
-        <div class="col col-1" data-label="Payment Status">{{$element->price}}</div>
+        <div class="col col-1" data-label="Payment Status">{{$element->price}} $</div>
         <div class="col col-1">{{$element->series}}</div>
         <div class="col col-1">{{$element->sale_date}}</div>
         <div class="col col-1 ms_flex">

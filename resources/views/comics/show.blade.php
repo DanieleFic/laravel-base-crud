@@ -12,7 +12,7 @@
       <h3>Copertina</h3>
       <img src="{{$comic->thumb}}" alt="">
       <h3>Prezzo del fumetto</h3>
-      <p>{{$comic->price}}</p>
+      <p>{{$comic->price}} $</p>
       <h3>Serie del fumetto</h3>
       <p>{{$comic->series}}</p>
       <h3>Data d'uscita</h3>
